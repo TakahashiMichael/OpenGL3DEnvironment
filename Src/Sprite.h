@@ -60,7 +60,7 @@ private:
 
 
 
-};
+};//class Sprite
 
 /*
 * スプライト描画クラス
@@ -69,11 +69,13 @@ private:
 class SpriteRenderer
 {
 public:
+	//default functions
 	SpriteRenderer() = default;
 	~SpriteRenderer() = default;
 	SpriteRenderer(const SpriteRenderer&) = delete;
 	SpriteRenderer& operator=(const SpriteRenderer&) = delete;
 
+	//Public functions
 	bool Init(size_t maxSpriteCount,const char* vsPath,const char* fsPath);
 	void BeginUpdate();
 	bool AddVertices(const Sprite&);
@@ -102,7 +104,7 @@ private:
 		Texture::Image2DPtr texture;
 	};
 	std::vector<Primitive>primitives;
-};
+};//class SpriteRenderer
 
 
 #endif // !SPRITE_H_INCLUDED

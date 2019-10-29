@@ -40,6 +40,7 @@ void Sprite::Texture(const Texture::Image2DPtr& tex)
 */
 bool SpriteRenderer::Init(size_t maxSpriteCount, const char* vsPath, const char* fsPath)
 {
+	//描画するスプライトの数だけ板ポリゴンを描画できる頂点を生成する
 	vbo.Create(GL_ARRAY_BUFFER, sizeof(Vertex) * maxSpriteCount * 4, nullptr,
 		GL_STREAM_DRAW);
 	
@@ -80,7 +81,7 @@ bool SpriteRenderer::Init(size_t maxSpriteCount, const char* vsPath, const char*
 	}
 
 	return true;
-}
+}//SpriteRenderer::Init
 
 /*
 * 頂点データの作成を開始する
@@ -165,7 +166,7 @@ bool SpriteRenderer::AddVertices(const Sprite& sprite)
 	}
 
 	return true;
-}
+}//SpriteRenderer::AddVertices
 
 /*
 * 頂点データの作成を終了する.
@@ -187,9 +188,9 @@ void SpriteRenderer::EndUpdate()
 */
 void SpriteRenderer::Draw(const glm::vec2& screenSize) const
  {
-	glDisable(GL_DEPTH_TEST);
-	glEnable(GL_BLEND);
-	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	glDisable(GL_DEPTH_TEST); //深度を無効
+	glEnable(GL_BLEND);//アルファを有効
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);//
 	
 	vao.Bind();
 	program->Use();
@@ -211,7 +212,7 @@ void SpriteRenderer::Draw(const glm::vec2& screenSize) const
 	}
 program->BindTexture(0, 0);
 vao.Unbind();
-}
+}//func SpriteRenderer::Draw
 
 /*
 * スプライトの描画データを消去する.
