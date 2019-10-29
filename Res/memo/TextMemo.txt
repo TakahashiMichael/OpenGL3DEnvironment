@@ -1,0 +1,39 @@
+//気になったことを記述していく
+
+5/14
+〇const メンバ関数と 非constメンバ関数を定義したとして
+　const メンバ関数をがコンパイラによって使用されるタイミングは
+　他のconst メンバ関数からの参照くらいしか思いつかないのだが、それくらいの認識でよいのであろうか,
+
+ A.自分が思いつくところ以外でも
+  const クラス変数定義
+  void (const Class)等でも
+  const ありメンバ関数が呼ばれる場合がある
+  以前、コンパイラが勝手にやってくれるのはかわらない
+
+
+〇using std::shared_ptr<X>=XPtrのようにするのは可読性のためだけか?
+ A.可読性のためだけ
+
+〇virtual Function()=0;
+　と
+　virtual Function()=0{};
+  virtual Function(){}
+//空の定義があるかないかの違いがある
+　に違いはあるのか.
+　A.純粋仮想関数でも定義を書くことはできる
+
+//GLFWEWにラッピングしていないが
+  ClearColor等はラッピング対象ではないのか
+
+
+  //解決済
+資料の不備に感じるところ{
+	SceneStackのProcessInputが無い気がする.
+	↑そもそもInputとUpdateがラッピングされているため、必要ない
+	(docment 2/ page19)
+
+	BufferObject::BufferSubData()関数の中
+	変数 errorの定義がない
+	(資料3 /page21)
+}
