@@ -1,35 +1,35 @@
-//file TitleScene.h
+//@file Title Scene.h
 
+//Include Guard
 #ifndef TITLESCENE_H_INCLUDED
 #define TITLESCENE_H_INCLUDED
-#include "Sound.h"
-#include "Scene.h"
-#include "Sprite.h"
-#include "Font.h"
-#include <vector>
 
+
+
+
+//Include Header
+#include "Scene.h"
+
+//Define TitleScene class
 /*
-* タイトル画面.
+* タイトル画面
 */
 class TitleScene : public Scene
 {
 public:
+	//デフォルトコンストラクタを派生クラスで設定する
 	TitleScene() : Scene("TitleScene") {}
 	virtual ~TitleScene() = default;
 
-	virtual bool Initialize()override;
+	virtual bool Initialize()override { return true; }
 	virtual void ProcessInput()override;
-	virtual void Update(float)override;
-	virtual void Render()override;
+	virtual void Update(float)override{}
+	virtual void Render()override{}
 	virtual void Finalize()override{}
 
+};//class TitleScene
 
-private:
-	std::vector<Sprite> sprites;
-	SpriteRenderer spriteRenderer;
-	FontRenderer fontRenderer;
-	Sound::Player sound_TitleBGM;
-};
+
 
 
 #endif // !TITLESCENE_H_INCLUDED
