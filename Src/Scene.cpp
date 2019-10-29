@@ -10,6 +10,8 @@
 */
 Scene::Scene(const char* name) :name(name) 
 {
+	//DebugLog
+	std::cout << "Scene constructer:" << name << std::endl;
 }
 
 /*
@@ -17,6 +19,10 @@ Scene::Scene(const char* name) :name(name)
 */
 Scene::~Scene()
 {
+	
+	//DebugLog
+	std::cout << "Scene Destructer:" << name << std::endl;
+
 	//デストラクタで呼ばれる定義はファイナライズ関数に記入する
 	Finalize();
 }
@@ -26,6 +32,9 @@ Scene::~Scene()
 */
 void Scene::Play() 
 {
+	//DebugLog
+	std::cout << "Scene Play:" << name << std::endl;
+
 	isActive = true;
 }
 
@@ -34,6 +43,8 @@ void Scene::Play()
 */
 void Scene::Stop()
 {
+	//DebugLog
+	std::cout << "Scene Stop:" << name << std::endl;
 	isActive = false;
 }
 
@@ -42,6 +53,8 @@ void Scene::Stop()
 */
 void Scene::Show()
 {
+	//DebugLog
+	std::cout << "Scene Show:" << name << std::endl;
 	isVisible = true;
 }
 
@@ -50,6 +63,9 @@ void Scene::Show()
 */
 void Scene::Hide()
 {
+	//DebugLog
+	std::cout << "Scene Hide:" << name << std::endl;
+
 	isVisible = false;
 }
 
