@@ -89,7 +89,7 @@ private:
 	SceneStack();
 	SceneStack(const SceneStack&) = delete;
 	SceneStack& operator=(const SceneStack&) = delete;
-	SceneStack() = delete;
+	~SceneStack() = default;
 
 	//Stack Array
 	std::vector<ScenePtr> stack;

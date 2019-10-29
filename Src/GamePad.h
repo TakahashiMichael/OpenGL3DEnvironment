@@ -4,10 +4,7 @@
 #define GAMEPAD_H_INCLUDED
 #include <stdint.h>
 
-//過去2D資料からの流用
-
 //ゲームパット情報
-
 struct GamePad
 {
 	enum {
@@ -26,6 +23,6 @@ struct GamePad
 	};
 	uint32_t buttons;		///<押されている間
 	uint32_t buttonDown;	///<押した瞬間
-};
+};//struct GamePad
 
 #endif // !GAMEPAD_H_INCLUDED

@@ -244,7 +244,7 @@ void SceneStack::Update(float deltaTime)
 */
 void SceneStack::Render(){
 	for (ScenePtr& e : stack) {
-		if (e->IsVisible) {
+		if (e->IsVisible()) {
 			e->Render();
 		}
 	}

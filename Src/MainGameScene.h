@@ -21,7 +21,7 @@ public:
 	virtual void Finalize()override {}
 
 private:
-	bool flag false;
+	bool flag =false;
 
 };//class MainGameScene
 

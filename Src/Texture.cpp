@@ -79,17 +79,17 @@ namespace Texture {
 	*/
 	struct DDSHeader
 	{
-		uint_t size;
-		uint_t flags;
-		uint_t height;
-		uint_t width;
-		uint_t pitchOrLinearSize;
-		uint_t depth;
-		uint_t mipMapCount;
-		uint_t reserved1[11];
-		DDSPixelFormat ddspf;
-		uint_t caps[4];
-		uint_t reserved2;
+		//uint_t size;
+		//uint_t flags;
+		//uint_t height;
+		//uint_t width;
+		//uint_t pitchOrLinearSize;
+		//uint_t depth;
+		//uint_t mipMapCount;
+		//uint_t reserved1[11];
+		//DDSPixelFormat ddspf;
+		//uint_t caps[4];
+		//uint_t reserved2;
 	};
 
 

@@ -15,6 +15,15 @@
     <Filter Include="Res\Shader">
       <UniqueIdentifier>{4ede9f0b-e3ea-4673-a234-19b173bbd24e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Res\Memo">
+      <UniqueIdentifier>{f6e10ed3-c277-45b1-8694-757e8248a918}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Graphic">
+      <UniqueIdentifier>{a54cb330-7279-4638-88d2-b19ad30765fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Graphic\GLEWFW">
+      <UniqueIdentifier>{42645c58-c518-4359-b62b-0d53dbf48cbc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\MainGameScene.h">
@@ -28,12 +37,6 @@
     </ClInclude>
     <ClInclude Include="Src\GameOverScene.h">
       <Filter>Src\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\GamePad.h">
-      <Filter>Src</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\GLFWEW.h">
-      <Filter>Src</Filter>
     </ClInclude>
     <ClInclude Include="Src\BufferObject.h">
       <Filter>Src</Filter>
@@ -107,6 +110,12 @@
     <ClInclude Include="Src\SoundBuffer.h">
       <Filter>Src</Filter>
     </ClInclude>
+    <ClInclude Include="Src\GamePad.h">
+      <Filter>Src\Graphic\GLEWFW</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\GLFWEW.h">
+      <Filter>Src\Graphic\GLEWFW</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Main.cpp">
@@ -123,9 +132,6 @@
     </ClCompile>
     <ClCompile Include="Src\GameOverScene.cpp">
       <Filter>Src\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\GLFWEW.cpp">
-      <Filter>Src</Filter>
     </ClCompile>
     <ClCompile Include="Src\BufferObject.cpp">
       <Filter>Src</Filter>
@@ -193,10 +199,19 @@
     <ClCompile Include="Src\SoundBuffer.cpp">
       <Filter>Src</Filter>
     </ClCompile>
+    <ClCompile Include="Src\GLFWEW.cpp">
+      <Filter>Src\Graphic\GLEWFW</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Res\memo\TextMemo.txt">
       <Filter>Res</Filter>
+    </Text>
+    <Text Include="Res\memo\StudyMemo.txt">
+      <Filter>Res\Memo</Filter>
+    </Text>
+    <Text Include="Res\memo\Questions.txt">
+      <Filter>Res\Memo</Filter>
     </Text>
   </ItemGroup>
   <ItemGroup>

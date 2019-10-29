@@ -214,7 +214,7 @@ double Window::DeltaTime() const
 */
 void Window::Update()
 {
-	UpdateGamePad();
+  UpdateGamePad();
   UpdateTimer();
   for (size_t i = 0; i < GLFW_KEY_LAST + 1; ++i) {
     const bool pressed = glfwGetKey(window, i) == GLFW_PRESS;
@@ -456,8 +456,8 @@ bool Window::GetCommand(COMMANDLIST command)
 				gamepad.buttons |= GamePad::DPAD_LEFT;
 			}
 			static const struct {
-				int glfwCode;
-				uint32_t gamepadCode;
+				int glfwCode; //GLFWのボタンID
+				uint32_t gamepadCode; //ゲームパッドの入力コード
 			} keyMap[] = {
 			  { GLFWBUTTONID_A, GamePad::A },
 			  { GLFWBUTTONID_B, GamePad::B },
@@ -474,9 +474,10 @@ bool Window::GetCommand(COMMANDLIST command)
 				else if (buttons[e.glfwCode] == GLFW_RELEASE) {
 					gamepad.buttons &= ~e.gamepadCode;
 				}
-			}
-		}
+			}//for(const auto& e: keyMap)
+		}//(axes && buttons && axesCount >= 2 && buttonCount >= 8)
 		else {
+			//ゲームパッドが検出できない場合の入力処理
 			static const struct {
 				int glfwCode;
 				uint32_t gamepadCode;
@@ -504,8 +505,8 @@ bool Window::GetCommand(COMMANDLIST command)
 				}
 			}
 		}
-		gamepad.buttonDown = gamepad.buttons & ~prevButtons;
-	}
+		gamepad.buttonDown = gamepad.buttons & ~prevButtons;//一度きりの入力kの判定
+	}//void Window::UpdateGamePad()
 
 
 } // namespace GLFWEW
