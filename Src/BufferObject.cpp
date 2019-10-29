@@ -26,7 +26,7 @@ bool BufferObject::Create(GLenum target, GLsizeiptr size, const GLvoid* data, GL
 	if (error!=GL_NO_ERROR) {
 		std::cerr << "[ERROR]" << __func__ << "Failed to Create Buffer" << std::endl;
 	}
-	return error == GL_NO_ERROR;
+	return error == GL_NO_ERROR; //GL‚ÌƒGƒ‰[‚ð‚»‚Ì‚Ü‚Ü•Ô‚·
 }
 
 
