@@ -1,75 +1,68 @@
 // @file Scene.h
 
+
+/*
+* シーンクラスのベース機能
+* スタック概念の学習用
+*/
+
+//Include Guard.
 #ifndef SCENE_H_INCLUDED
 #define SCENE_H_INCLUDED
 
+//HeaderInclude 
 #include <memory>
 #include <string>
-#include <vector>
 
+//前方宣言
 class SceneStack;
 
 /*
-* シーン基底クラス
+* シーンの基底クラス
 */
 class Scene {
 public:
-	Scene(const char* name);//コンストラクタ
-	Scene(const Scene&) = delete; //コピーコンストラクタ
-	Scene& operator=(const Scene&) = delete; //コピー代入演算子
-	virtual ~Scene(); //デストラクタ
+	//デフォルト関数の制御
+	Scene(const char* name);
+	Scene(const Scene&) = delete;//コピーコンストラクタ削除
+	Scene& operator=(const Scene&) = delete;//コピー代入演算子削除
+	virtual ~Scene();
 
-	virtual bool Initialize() = 0 {}
-	virtual void ProcessInput() = 0 {}
-	virtual void Update(float) = 0 {}
-	virtual void Render() = 0 {}
-	virtual void Finalize() =0{}
+	/*純粋関数一覧
+	* Initialize	:初期化
+	* ProcessInput	:入力処理
+	* Update		:更新
+	* Render		:描画
+	* Finalize		:終了処理
+	*/
 
-	virtual void Play();
-	virtual void Stop();
-	virtual void Show();
-	virtual void Hide();
+	 virtual bool Initialize()=0{}
+	 virtual void ProcessInput()=0{}
+	 virtual void Update(float)=0{}
+	 virtual void Render()=0{}
+	 virtual void Finalize()=0{}
 
-	const std::string& Name()const; //変数のgetter
-	bool IsActive() const;  //変数のgetter
-	bool IsVisible() const; //変数のgetter
+	 virtual void Play();
+	 virtual void Stop();
+	 virtual void Show();
+	 virtual void Hide();
+
+	 const std::string& Name() const;
+	 bool IsActive()const;
+	 bool IsVisible()const;
+
+
 
 private:
 	std::string name;
-	bool isVisible = true; //何に使うかわからない
-	bool isActive = true; //アクティブかどうか
+	bool isActive = true;
+	bool isVisible = true;
 
 };
-using ScenePtr = std::shared_ptr<Scene>; //別名を生成
 
+//ポインタ型の名前を再定義
+using ScenePtr = std::shared_ptr<Scene>;
 
-/*
-* シーン管理クラス
-*/
-class SceneStack
-{
-public:
-	static SceneStack& Instance();
-
-	void Push(ScenePtr);
-	void Pop();
-	void Replace(ScenePtr);
-	Scene& Current();
-	const Scene& Current() const;
-	size_t Size() const;
-	bool Empty() const;
-
-	void Update(float);
-	void Render();
-
-private:
-	SceneStack();
-	SceneStack(const SceneStack&) = delete;
-	SceneStack& operator=(const SceneStack&) = delete;
-	~SceneStack() = default;
-
-	std::vector<ScenePtr> stack;
-};
 
 
 
