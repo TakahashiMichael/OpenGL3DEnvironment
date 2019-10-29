@@ -1,0 +1,56 @@
+﻿  Actor.cpp
+d:\vantan\opengl\opengl3denvironment\src\texture.h(95): warning C4244: 'return': 'GLsizeiptr' から 'GLint' への変換です。データが失われる可能性があります。
+d:\vantan\opengl\opengl3denvironment\src\actor.cpp(140): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+d:\vantan\opengl\opengl3denvironment\src\actor.cpp(154): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+  BufferObject.cpp
+  Collision.cpp
+  FileReader_Wav.cpp
+  Font.cpp
+d:\vantan\opengl\opengl3denvironment\src\texture.h(95): warning C4244: 'return': 'GLsizeiptr' から 'GLint' への変換です。データが失われる可能性があります。
+d:\vantan\opengl\opengl3denvironment\src\font.cpp(168): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
+d:\vantan\opengl\opengl3denvironment\src\font.cpp(168): warning C4244: '初期化中': 'double' から 'const float' への変換です。データが失われる可能性があります。
+  GameOverScene.cpp
+  GLFWEW.cpp
+d:\vantan\opengl\opengl3denvironment\src\glfwew.cpp(220): warning C4267: '引数': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+  JizoActor.cpp
+d:\vantan\opengl\opengl3denvironment\src\texture.h(95): warning C4244: 'return': 'GLsizeiptr' から 'GLint' への変換です。データが失われる可能性があります。
+  json11.cpp
+  Light.cpp
+d:\vantan\opengl\opengl3denvironment\src\texture.h(95): warning C4244: 'return': 'GLsizeiptr' から 'GLint' への変換です。データが失われる可能性があります。
+  Main.cpp
+  MainGameScene.cpp
+  Mesh.cpp
+d:\vantan\opengl\opengl3denvironment\src\texture.h(95): warning C4244: 'return': 'GLsizeiptr' から 'GLint' への変換です。データが失われる可能性があります。
+d:\vantan\opengl\opengl3denvironment\src\mesh.cpp(515): warning C4267: '引数': 'size_t' から 'glm::vec<4,float,0>::length_type' に変換しました。データが失われているかもしれません。
+  PlayerActor.cpp
+d:\vantan\opengl\opengl3denvironment\src\texture.h(95): warning C4244: 'return': 'GLsizeiptr' から 'GLint' への変換です。データが失われる可能性があります。
+  Scene.cpp
+  Shader.cpp
+  SkeletalMesh.cpp
+d:\vantan\opengl\opengl3denvironment\src\texture.h(95): warning C4244: 'return': 'GLsizeiptr' から 'GLint' への変換です。データが失われる可能性があります。
+d:\vantan\opengl\opengl3denvironment\src\skeletalmesh.cpp(264): warning C4244: '初期化中': '__int64' から 'int' への変換です。データが失われる可能性があります。
+d:\vantan\opengl\opengl3denvironment\src\skeletalmesh.cpp(264): warning C4244: '初期化中': '__int64' から 'const int' への変換です。データが失われる可能性があります。
+d:\vantan\opengl\opengl3denvironment\src\skeletalmesh.cpp(272): warning C4244: '初期化中': '__int64' から 'int' への変換です。データが失われる可能性があります。
+d:\vantan\opengl\opengl3denvironment\src\skeletalmesh.cpp(272): warning C4244: '初期化中': '__int64' から 'const int' への変換です。データが失われる可能性があります。
+d:\vantan\opengl\opengl3denvironment\src\skeletalmesh.cpp(962): warning C4267: '引数': 'size_t' から 'glm::vec<4,float,0>::length_type' に変換しました。データが失われているかもしれません。
+  SkeletalMeshActor.cpp
+d:\vantan\opengl\opengl3denvironment\src\texture.h(95): warning C4244: 'return': 'GLsizeiptr' から 'GLint' への変換です。データが失われる可能性があります。
+  Sound.cpp
+  SoundActor.cpp
+  コードを生成中...
+  コンパイル中...
+  SoundALobjects.cpp
+  SoundBuffer.cpp
+  Sprite.cpp
+d:\vantan\opengl\opengl3denvironment\src\texture.h(95): warning C4244: 'return': 'GLsizeiptr' から 'GLint' への変換です。データが失われる可能性があります。
+d:\vantan\opengl\opengl3denvironment\src\sprite.cpp(209): warning C4267: '引数': 'size_t' から 'GLsizei' に変換しました。データが失われているかもしれません。
+  StatusScene.cpp
+  Terrain.cpp
+d:\vantan\opengl\opengl3denvironment\src\texture.h(95): warning C4244: 'return': 'GLsizeiptr' から 'GLint' への変換です。データが失われる可能性があります。
+  Texture.cpp
+d:\vantan\opengl\opengl3denvironment\src\texture.h(95): warning C4244: 'return': 'GLsizeiptr' から 'GLint' への変換です。データが失われる可能性があります。
+  TitleScene.cpp
+  UniformBuffer.cpp
+  コードを生成中...
+     ライブラリ D:\Vantan\opengl\OpenGL3DEnvironment\x64\Debug\OpenGL2019.lib とオブジェクト D:\Vantan\opengl\OpenGL3DEnvironment\x64\Debug\OpenGL2019.exp を作成中
+  OpenGL2019.vcxproj -> D:\Vantan\opengl\OpenGL3DEnvironment\x64\Debug\OpenGL2019.exe
