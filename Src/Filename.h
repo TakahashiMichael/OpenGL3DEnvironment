@@ -22,6 +22,6 @@
 #define FILENAME_WAV_TITLE_BGW "Res/Sound/BGM_Title.wav"
 
 //FNT
-#define FILENAME_FNT_FONT "Res/font.fnt"
+#define FILENAME_FNT_FONT "Res/Font/font.fnt"
 
 #endif // !FILENAME_H_INCLUDED

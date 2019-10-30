@@ -5,7 +5,7 @@
 #include "MainGameScene.h"
 #include "GLFWEW.h"
 
-
+#include <iostream>
 
 
 /*
@@ -26,7 +26,12 @@ bool TitleScene::Initialize()
 	sprTitleLogo.Scale(glm::vec2(1));
 	sprites.push_back(sprTitleLogo);
 
+	fontRenderer.Init(1000);
+	fontRenderer.LoadFromFile(FILENAME_FNT_FONT);
 
+	bgmTitle.Init(FILENAME_WAV_TITLE_BGW);
+	bgmTitle.SetLooping(true);
+	bgmTitle.Play();
 	return true;
 }//func TitleScene::Initialize
 
@@ -51,11 +56,21 @@ void TitleScene::ProcessInput()
 */
 void TitleScene::Update(float deltaTime)
 {
+
 	spriteRenderer.BeginUpdate();
 	for (const Sprite& e : sprites) {
 		spriteRenderer.AddVertices(e);
 	}
 	spriteRenderer.EndUpdate();
+
+	const GLFWEW::Window& window = GLFWEW::Window::Instance();
+	const float w = static_cast<float>(window.Width());
+	const float h = static_cast<float>(window.Height());
+	const float lineHeight = fontRenderer.LineHeight();
+	fontRenderer.BeginUpdate();
+	fontRenderer.AddString(glm::vec2(-w * 0.5f + 32, h * 0.5f - lineHeight), L"タイトル画面");
+	fontRenderer.AddString(glm::vec2(-128, 0), L"アクションゲーム");
+	fontRenderer.EndUpdate();
 }//func TitleScene::Update
 
 /*
@@ -66,5 +81,13 @@ void TitleScene::Render()
 	const GLFWEW::Window& window = GLFWEW::Window::Instance();
 	const glm::vec2 screenSize(window.Width(),window.Height());
 	spriteRenderer.Draw(screenSize);
+	fontRenderer.Draw(screenSize);
 
 }//func TitleScene::Render
+
+/*
+* Finalize scene
+*/
+void TitleScene::Finalize()
+{
+}

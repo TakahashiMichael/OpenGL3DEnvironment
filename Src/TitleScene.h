@@ -10,6 +10,8 @@
 //Include Header
 #include "Scene.h"
 #include "Sprite.h"
+#include "Font.h"
+#include "Sound.h"
 #include <vector>
 
 //Define TitleScene class
@@ -27,12 +29,15 @@ public:
 	virtual void ProcessInput()override;
 	virtual void Update(float)override;
 	virtual void Render()override;
-	virtual void Finalize()override{}
+	virtual void Finalize()override;
 
 private:
 	std::vector<Sprite> sprites;
 	SpriteRenderer spriteRenderer;
 
+	Sound::Player bgmTitle;
+
+	FontRenderer fontRenderer;
 };//class TitleScene
 
 
