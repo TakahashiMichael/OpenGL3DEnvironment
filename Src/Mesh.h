@@ -21,17 +21,8 @@ namespace Mesh {
 	class Buffer;
 	using BufferPtr = std::shared_ptr<Buffer>;
 
-	// スケルタルメッシュ用の先行宣言.
-	struct Node;
-	struct ExtendedFile;
-	using ExtendedFilePtr = std::shared_ptr<ExtendedFile>;
-	class SkeletalMesh;
-	using SkeletalMeshPtr = std::shared_ptr<SkeletalMesh>;
-
-
-
 	/*
-	* 頂点データ
+	* 頂点データ.
 	*/
 	struct Vertex
 	{
@@ -40,31 +31,28 @@ namespace Mesh {
 		glm::vec3 normal;
 	};
 
-
 	/*
-	* プリミティブの材質
+	* プリミティブの材質.
 	*/
 	struct Material
 	{
 		glm::vec4 baseColor = glm::vec4(1);
-		Texture::InterfacePtr texture[8];
+		Texture::Image2DPtr texture;
 		Shader::ProgramPtr program;
-		// スケルタルメッシュ用のシェーダー.
-		Shader::ProgramPtr progSkeletalMesh;
 	};
 
 	/*
-	* 頂点データの描画パラメータ.
+	* 頂点データの描パラメータ.
 	*/
 	struct Primitive
 	{
-		GLenum mode;
-		GLsizei count;
-		GLenum type;
-		const GLvoid* indices;
-		GLint baseVertex = 0;
-		std::shared_ptr<VertexArrayObject>vao;
-		int material = 0;
+		GLenum mode;							///type
+		GLsizei count;							///size
+		GLenum type;							///type
+		const GLvoid* indices;					///indices
+		GLint baseVertex = 0;					///vertex
+		std::shared_ptr<VertexArrayObject>vao;	///vao
+		int material = 0;						///material
 	};
 
 	/*
@@ -72,16 +60,17 @@ namespace Mesh {
 	*/
 	struct Mesh
 	{
-		std::string name; //メッシュ名.
+		std::string name;//メッシュ名.
 		std::vector<Primitive> primitives;
 	};
 
+
 	/*
-	* ファイル
+	* ファイルクラス
 	*/
 	struct File
 	{
-		std::string name;//ファイル名
+		std::string name;//ファイル名.
 		std::vector<Mesh> meshes;
 		std::vector<Material> materials;
 	};
@@ -96,50 +85,25 @@ namespace Mesh {
 		Buffer() = default;
 		~Buffer() = default;
 
-		bool Init(GLsizeiptr vboSize, GLsizeiptr iboSize);
-		GLintptr AddVertexData(const void* data, size_t size);
+		bool Init(GLsizeiptr vboSize,GLsizeiptr iboSize);
+		GLintptr AddVertexData(const void* data,size_t size);
 		GLintptr AddIndexData(const void* data, size_t size);
-		Primitive CreatePrimitive(
-			size_t count, GLenum type, size_t iOffset, size_t vOffset) const;
-		Material CreateMaterial(const glm::vec4& color, Texture::Image2DPtr texture) const;
-		bool AddMesh(const char* name, const Primitive& primitive, const Material& material);
+		Primitive CreatePriitive(
+			size_t const,GLenum type,size_t iOffset,size_t vOffset)const;
+		Material CreateMaterial(const glm::vec4& color,Texture::Image2DPtr texture)const;
+		bool AddMesh(const char* name,const Primitive& primitive,const Material& material);
+		FilePtr GetFile(const char* name)const;
 
-		bool SetAttribute(Primitive*, int, const json11::Json&, const json11::Json&,
-			const std::vector<std::vector<char>>&);
-		bool LoadMesh(const char* path);
-
-		FilePtr GetFile(const char* name) const;
-
-		void SetViewProjectionMatrix(const glm::mat4&) const;
-		void AddCube(const char* name);
-
-		// スケルタル・アニメーションに対応したメッシュの読み込みと取得.
-		bool LoadSkeletalMesh(const char* path);
-		SkeletalMeshPtr GetSkeletalMesh(const char* meshName) const;
-
-		const Shader::ProgramPtr& GetStaticMeshShader() const { return progStaticMesh; }
-		const Shader::ProgramPtr& GetTerrainShader() const { return progTerrain; }
 	private:
-		BufferObject vbo;
-		BufferObject ibo;
+		BufferObject vbo;	//描画用vbo
+		BufferObject ibo;	//描画用ibo
 		GLintptr vboEnd = 0;
 		GLintptr iboEnd = 0;
 		std::unordered_map<std::string, FilePtr> files;
 		Shader::ProgramPtr progStaticMesh;
-		Shader::ProgramPtr progTerrain;
-
-		// スケルタル・アニメーションに対応したメッシュを保持するメンバ変数.
-		Shader::ProgramPtr progSkeletalMesh;
-		struct MeshIndex {
-			ExtendedFilePtr file;
-			const Node* node = nullptr;
-
-		};
-		std::unordered_map<std::string, MeshIndex> meshes;
-		std::unordered_map<std::string, ExtendedFilePtr> extendedFiles;
 	};
 
-	void Draw(const FilePtr&, const glm::mat4& matM);
+
 }// namespace Mesh
 
 
