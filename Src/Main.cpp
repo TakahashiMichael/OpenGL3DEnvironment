@@ -30,8 +30,25 @@ int main()
 	while (!window.ShouldClose())
 	{
 		window.Update();
+
+		//終了処理
+		if (window.IsKeyPressed(GLFW_KEY_ESCAPE)) {
+			if (MessageBox(nullptr,"ゲームを終了しますか?","終了",MB_OKCANCEL)==IDOK) {
+				break;
+			}
+		}
+
 		const float deltaTime = static_cast<float>(window.DeltaTime());
 		sceneStack.Update(deltaTime);
+
+		//Delete BackBuffer
+		glClearColor(0.1f,0.2f,0.8f,1.0f);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+		//GLコンテキストのパラメータを設定.
+		glEnable(GL_CULL_FACE);
+		glEnable(GL_DEPTH_TEST);
+
 		sceneStack.Render();
 
 		window.SwapBuffers();
