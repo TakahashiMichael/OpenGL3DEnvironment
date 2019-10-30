@@ -1,5 +1,6 @@
-//@file StaticMesh.vert
-
+/**
+* @file StaticMesh.vert
+*/
 #version 430
 
 layout(location=0) in vec3 vPosition;
@@ -13,8 +14,9 @@ layout(location=2) out vec3 outNormal;
 uniform mat4 matMVP;
 uniform mat4 matModel;
 
-//スタティックメッシュ用頂点シェーダ.
-
+/**
+* スタティックメッシュ用頂点シェーダー.
+*/
 void main()
 {
   mat3 matNormal = transpose(inverse(mat3(matModel)));
