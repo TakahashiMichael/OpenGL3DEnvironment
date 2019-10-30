@@ -110,9 +110,6 @@
     <ClInclude Include="Src\Font.h">
       <Filter>Src\Graphic\2D</Filter>
     </ClInclude>
-    <ClInclude Include="Src\Terrain.h">
-      <Filter>Src\Graphic\Shader</Filter>
-    </ClInclude>
     <ClInclude Include="Src\Shader.h">
       <Filter>Src\Graphic\Shader</Filter>
     </ClInclude>
@@ -122,23 +119,8 @@
     <ClInclude Include="Src\Geometry.h">
       <Filter>Src\Graphic\Shader</Filter>
     </ClInclude>
-    <ClInclude Include="Src\PlayerActor.h">
-      <Filter>Src\Game\Actor</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Actor.h">
-      <Filter>Src\Game\Actor</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\SkeletalMeshActor.h">
-      <Filter>Src\Graphic\3D</Filter>
-    </ClInclude>
     <ClInclude Include="Src\Mesh.h">
       <Filter>Src\Graphic\3D</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\SkeletalMesh.h">
-      <Filter>Src\Graphic\3D</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\JizoActor.h">
-      <Filter>Src\Game\Actor</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -199,32 +181,14 @@
     <ClCompile Include="Src\Font.cpp">
       <Filter>Src\Graphic\2D</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Terrain.cpp">
-      <Filter>Src\Graphic\Shader</Filter>
-    </ClCompile>
     <ClCompile Include="Src\Shader.cpp">
       <Filter>Src\Graphic\Shader</Filter>
     </ClCompile>
     <ClCompile Include="Src\Light.cpp">
       <Filter>Src\Graphic\Shader</Filter>
     </ClCompile>
-    <ClCompile Include="Src\PlayerActor.cpp">
-      <Filter>Src\Game\Actor</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Actor.cpp">
-      <Filter>Src\Game\Actor</Filter>
-    </ClCompile>
     <ClCompile Include="Src\Mesh.cpp">
       <Filter>Src\Graphic\3D</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\SkeletalMesh.cpp">
-      <Filter>Src\Graphic\3D</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\SkeletalMeshActor.cpp">
-      <Filter>Src\Graphic\3D</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\JizoActor.cpp">
-      <Filter>Src\Game\Actor</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -235,6 +199,9 @@
       <Filter>Res\Memo</Filter>
     </Text>
     <Text Include="Res\memo\Questions.txt">
+      <Filter>Res\Memo</Filter>
+    </Text>
+    <Text Include="Res\memo\GLSL.txt">
       <Filter>Res\Memo</Filter>
     </Text>
   </ItemGroup>

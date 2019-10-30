@@ -8,10 +8,12 @@
 //Shader_Vertex
 #define FILENAME_SHADER_VERT_SPRITE "Res/Shader/Sprite.vert"
 //#define FILENAME_SHADER_VERT_SPRITE "Res/Shader/Sprite.vert"
+#define FILENAME_SHADER_VERT_STATICMESH "Res/Shader/StaticMesh.vert"
 
 //Shader_Fragment 
 #define FILENAME_SHADER_FRAG_SPRITE "Res/Shader/Sprite.frag"
 //#define FILENAME_SHADER_FRAG_SPRITE "Res/Shader/Sprite.frag"
+#define FILENAME_SHADER_FRAG_STATICMESH "Res/Shader/StaticMesh.frag"
 
 
 //TGA
