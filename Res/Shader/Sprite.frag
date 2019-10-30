@@ -1,4 +1,4 @@
-//@file Sprite.frag
+// @file Sprite.frag
 
 #version 430
 
@@ -9,8 +9,10 @@ out vec4 fragColor;
 
 uniform sampler2D texColor;
 
-//スプライト用フラグメントシェーダー
+//Sprite frag Shader
 void main()
 {
-   fragColor=inColor*texture(texColor,inTexCoord);
+    fragColor=inColor*texture(texColor,inTexCoord);
+
+
 }
