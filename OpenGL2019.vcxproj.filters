@@ -9,9 +9,6 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Src\Scene">
-      <UniqueIdentifier>{230c3aa4-0ead-4677-9cba-d321f2bc7052}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Res\Shader">
       <UniqueIdentifier>{4ede9f0b-e3ea-4673-a234-19b173bbd24e}</UniqueIdentifier>
     </Filter>
@@ -24,90 +21,54 @@
     <Filter Include="Src\Graphic\GLEWFW">
       <UniqueIdentifier>{42645c58-c518-4359-b62b-0d53dbf48cbc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Src\Graphic\BufferObject">
+      <UniqueIdentifier>{b07781e5-ca84-4ea6-9822-4dc5cceb0c82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Sound">
+      <UniqueIdentifier>{d7897d02-559a-487f-93fb-28dfa6d404d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Game">
+      <UniqueIdentifier>{2d0bb250-2ce5-4754-b758-49c59149abba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Game\Scene">
+      <UniqueIdentifier>{230c3aa4-0ead-4677-9cba-d321f2bc7052}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Game\System">
+      <UniqueIdentifier>{6f8952e5-2a4b-4e00-950f-fbad5ea69200}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Graphic\2D">
+      <UniqueIdentifier>{a15eee5f-be51-41e2-a67a-6e53f382c846}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Graphic\Shader">
+      <UniqueIdentifier>{b58b32b9-59f7-4757-a820-5b7279666fb6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Game\Actor">
+      <UniqueIdentifier>{b6920fd8-5cd6-4d70-b7b2-ab3d78f0e553}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Graphic\3D">
+      <UniqueIdentifier>{c0dbd80f-315e-40f5-b1ff-740a396374d6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\MainGameScene.h">
-      <Filter>Src\Scene</Filter>
+      <Filter>Src\Game\Scene</Filter>
     </ClInclude>
     <ClInclude Include="Src\Scene.h">
-      <Filter>Src\Scene</Filter>
+      <Filter>Src\Game\Scene</Filter>
     </ClInclude>
     <ClInclude Include="Src\StatusScene.h">
-      <Filter>Src\Scene</Filter>
+      <Filter>Src\Game\Scene</Filter>
     </ClInclude>
     <ClInclude Include="Src\GameOverScene.h">
-      <Filter>Src\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\BufferObject.h">
-      <Filter>Src</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Texture.h">
-      <Filter>Src</Filter>
+      <Filter>Src\Game\Scene</Filter>
     </ClInclude>
     <ClInclude Include="Src\TitleScene.h">
-      <Filter>Src\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Shader.h">
-      <Filter>Src</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Geometry.h">
-      <Filter>Src</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Sprite.h">
-      <Filter>Src</Filter>
+      <Filter>Src\Game\Scene</Filter>
     </ClInclude>
     <ClInclude Include="Src\Filename.h">
       <Filter>Src</Filter>
     </ClInclude>
-    <ClInclude Include="Src\Font.h">
-      <Filter>Src</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Mesh.h">
-      <Filter>Src</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Terrain.h">
-      <Filter>Src</Filter>
-    </ClInclude>
     <ClInclude Include="Src\json11.hpp">
-      <Filter>Src</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Actor.h">
-      <Filter>Src</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Collision.h">
-      <Filter>Src</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\PlayerActor.h">
-      <Filter>Src</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\SkeletalMesh.h">
-      <Filter>Src</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\SkeletalMeshActor.h">
-      <Filter>Src</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\UniformBuffer.h">
-      <Filter>Src</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\JizoActor.h">
-      <Filter>Src\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Light.h">
-      <Filter>Src</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\FileReader_Wav.h">
-      <Filter>Src</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Sound.h">
-      <Filter>Src</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\SoundActor.h">
-      <Filter>Src</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\SoundALobjects.h">
-      <Filter>Src</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\SoundBuffer.h">
       <Filter>Src</Filter>
     </ClInclude>
     <ClInclude Include="Src\GamePad.h">
@@ -116,91 +77,154 @@
     <ClInclude Include="Src\GLFWEW.h">
       <Filter>Src\Graphic\GLEWFW</Filter>
     </ClInclude>
+    <ClInclude Include="Src\BufferObject.h">
+      <Filter>Src\Graphic\BufferObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\SoundBuffer.h">
+      <Filter>Src\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Sound.h">
+      <Filter>Src\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\SoundActor.h">
+      <Filter>Src\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\SoundALobjects.h">
+      <Filter>Src\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\FileReader_Wav.h">
+      <Filter>Src\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Collision.h">
+      <Filter>Src\Game\System</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\UniformBuffer.h">
+      <Filter>Src\Graphic\BufferObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Texture.h">
+      <Filter>Src\Graphic\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Sprite.h">
+      <Filter>Src\Graphic\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Font.h">
+      <Filter>Src\Graphic\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Terrain.h">
+      <Filter>Src\Graphic\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shader.h">
+      <Filter>Src\Graphic\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Light.h">
+      <Filter>Src\Graphic\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Geometry.h">
+      <Filter>Src\Graphic\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\PlayerActor.h">
+      <Filter>Src\Game\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Actor.h">
+      <Filter>Src\Game\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\SkeletalMeshActor.h">
+      <Filter>Src\Graphic\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Mesh.h">
+      <Filter>Src\Graphic\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\SkeletalMesh.h">
+      <Filter>Src\Graphic\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\JizoActor.h">
+      <Filter>Src\Game\Actor</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Main.cpp">
       <Filter>Src</Filter>
     </ClCompile>
     <ClCompile Include="Src\MainGameScene.cpp">
-      <Filter>Src\Scene</Filter>
+      <Filter>Src\Game\Scene</Filter>
     </ClCompile>
     <ClCompile Include="Src\Scene.cpp">
-      <Filter>Src\Scene</Filter>
+      <Filter>Src\Game\Scene</Filter>
     </ClCompile>
     <ClCompile Include="Src\StatusScene.cpp">
-      <Filter>Src\Scene</Filter>
+      <Filter>Src\Game\Scene</Filter>
     </ClCompile>
     <ClCompile Include="Src\GameOverScene.cpp">
-      <Filter>Src\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\BufferObject.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Texture.cpp">
-      <Filter>Src</Filter>
+      <Filter>Src\Game\Scene</Filter>
     </ClCompile>
     <ClCompile Include="Src\TitleScene.cpp">
-      <Filter>Src\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Shader.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Sprite.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Font.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Mesh.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Terrain.cpp">
-      <Filter>Src</Filter>
+      <Filter>Src\Game\Scene</Filter>
     </ClCompile>
     <ClCompile Include="Src\json11.cpp">
       <Filter>Src</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Actor.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Collision.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\PlayerActor.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\SkeletalMesh.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\SkeletalMeshActor.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\UniformBuffer.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\JizoActor.cpp">
-      <Filter>Src\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Light.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\FileReader_Wav.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Sound.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\SoundActor.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\SoundALobjects.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\SoundBuffer.cpp">
-      <Filter>Src</Filter>
-    </ClCompile>
     <ClCompile Include="Src\GLFWEW.cpp">
       <Filter>Src\Graphic\GLEWFW</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\BufferObject.cpp">
+      <Filter>Src\Graphic\BufferObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Sound.cpp">
+      <Filter>Src\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\SoundActor.cpp">
+      <Filter>Src\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\SoundALobjects.cpp">
+      <Filter>Src\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\SoundBuffer.cpp">
+      <Filter>Src\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\FileReader_Wav.cpp">
+      <Filter>Src\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Collision.cpp">
+      <Filter>Src\Game\System</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\UniformBuffer.cpp">
+      <Filter>Src\Graphic\BufferObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Texture.cpp">
+      <Filter>Src\Graphic\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Sprite.cpp">
+      <Filter>Src\Graphic\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Font.cpp">
+      <Filter>Src\Graphic\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Terrain.cpp">
+      <Filter>Src\Graphic\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shader.cpp">
+      <Filter>Src\Graphic\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Light.cpp">
+      <Filter>Src\Graphic\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\PlayerActor.cpp">
+      <Filter>Src\Game\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Actor.cpp">
+      <Filter>Src\Game\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Mesh.cpp">
+      <Filter>Src\Graphic\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\SkeletalMesh.cpp">
+      <Filter>Src\Graphic\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\SkeletalMeshActor.cpp">
+      <Filter>Src\Graphic\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\JizoActor.cpp">
+      <Filter>Src\Game\Actor</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
