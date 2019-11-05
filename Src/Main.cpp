@@ -16,7 +16,7 @@ extern "C" {
 
 int main()
 {
-	
+
 	GLFWEW::Window& window = GLFWEW::Window::Instance();
 	//CreateWindow
 	window.Init(1280,720,u8"アクションゲーム");

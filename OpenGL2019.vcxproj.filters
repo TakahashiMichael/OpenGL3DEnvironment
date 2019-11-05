@@ -122,6 +122,9 @@
     <ClInclude Include="Src\Mesh.h">
       <Filter>Src\Graphic\3D</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Terrain.h">
+      <Filter>Src\Graphic\3D</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Main.cpp">
@@ -188,6 +191,9 @@
       <Filter>Src\Graphic\Shader</Filter>
     </ClCompile>
     <ClCompile Include="Src\Mesh.cpp">
+      <Filter>Src\Graphic\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Terrain.cpp">
       <Filter>Src\Graphic\3D</Filter>
     </ClCompile>
   </ItemGroup>

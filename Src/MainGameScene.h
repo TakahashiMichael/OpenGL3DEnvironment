@@ -5,6 +5,7 @@
 
 #include "Scene.h"
 #include "Mesh.h"
+#include "Terrain.h"
 
 /*
 * ƒƒCƒ“ƒQ[ƒ€‰æ–Ê
@@ -24,7 +25,7 @@ public:
 private:
 	bool flag =false;
 	Mesh::Buffer meshBuffer;
-
+	Terrain::HeightMap heightMap;
 };//class MainGameScene
 
 #endif // !MAINGAMESCENE_H_INCLUDED
