@@ -88,13 +88,18 @@ namespace Mesh {
 		bool Init(GLsizeiptr vboSize,GLsizeiptr iboSize);
 		GLintptr AddVertexData(const void* data,size_t size);
 		GLintptr AddIndexData(const void* data, size_t size);
-		Primitive CreatePriitive(
+		Primitive CreatePrimitive(
 			size_t const,GLenum type,size_t iOffset,size_t vOffset)const;
 		Material CreateMaterial(const glm::vec4& color,Texture::Image2DPtr texture)const;
 		bool AddMesh(const char* name,const Primitive& primitive,const Material& material);
 		FilePtr GetFile(const char* name)const;
 
 		void AddCube(const char* name);
+
+		//
+		bool SetAttribute(Primitive* ,int,const json11::Json& ,const json11::Json&,
+			const std::vector<std::vector<char>>&);
+		bool LoadMesh(const char* path);
 
 	private:
 		BufferObject vbo;	//•`‰æ—pvbo

@@ -6,60 +6,61 @@
 #include <algorithm>
 
 namespace Terrain {
-	/*
+
+	/**
 	* 画像ファイルから地形データを読み込む.
 	*
-	* @param path 画像ファイル名
-	* @param scale 高さに掛ける係数.
-	* @param baseLevel 高さ0とみなす高さの値(0.0~1.0のどこの高さを0とするか) 
+	* @param path      画像ファイル名.
+	* @param scale     高さに掛ける係数.
+	* @param baseLevel 高さ0とみなす高さ値(色データ0.0～1.0のどこを高さ0とするか).
 	*
-	* @return true 読み込み成功
-	* @return false 読み込み失敗
+	* @retval true  読み込み成功.
+	* @retval false 読み込み失敗.
+	*
+	* 画像の赤要素を高さデータとみなして読み込む.
 	*/
-	bool HeightMap::LoadFromFile(const char* path, float scale, float baseLevel) {
-		//画像ファイルを読み込む
+	bool HeightMap::LoadFromFile(const char* path, float scale, float baseLevel)
+	{
+		// 画像ファイルを読み込む.
 		Texture::ImageData imageData;
 		if (!Texture::LoadImage2D(path, &imageData)) {
-			std::cerr << "[エラー]" << __func__ << ":ハイトマップを読み込めませんでした." << std::endl;
+			std::cerr << "[エラー]" << __func__ << ": ハイトマップを読み込めませんでした.\n";
 			return false;
-		}
-		name = path; //ファイル名を記録します.
 
-		//画像の大きさを保存する.
+		}
+
+		name = path;
+
+		// 画像の大きさを保存.
 		size = glm::ivec2(imageData.width, imageData.height);
 
-		//画像データは下から上に向かって格納されているので、上下反転しながら高さデータに変換.
+		// 画像データは下から上に向かって格納されているので、上下反転しながら高さデータに変換.
 		heights.resize(imageData.data.size());
 		for (int y = 0; y < size.y; ++y) {
-			const int offsetY = (size.y - 1) - y;//上下反転
+			const int offsetY = (size.y - 1) - y; // 上下反転.
 			for (int x = 0; x < size.x; ++x) {
 				const glm::vec4 color = imageData.GetColor(x, y);
-				heights[offsetY*size.x + x] = (color.r - baseLevel)*scale;
-			}
-		}
+				heights[offsetY * size.x + x] = (color.r - baseLevel) * scale;
 
-		for (int i = 0; i < 2; ++i) {
-			lightIndex[i] = Texture::Buffer::Create(GL_RGBA8I, size.x * size.y * 4, nullptr, GL_DYNAMIC_DRAW);
-			if (!lightIndex[i]) {
-				return false;
-				
 			}
+
 		}
 		return true;
 	}
 
-	/*
+
+	/**
 	* 高さを取得する.
 	*
 	* @param pos 高さを取得する座標.
 	*
 	* @return posの位置の高さ.
 	*
-	* ハイトマップあxz平面に対応し.原点(0,0)からplus方向に定義される.
+	* ハイトマップはXZ平面に対応し、原点(0, 0)からプラス方向に定義される.
 	*/
-	float HeightMap::Height(const glm::vec3& pos)const
+	float HeightMap::Height(const glm::vec3& pos) const
 	{
-		//座標が高さマップの範囲内に収まるように切り上げ,または切り捨てる
+		// 座標が高さマップの範囲内に収まるように切り上げ、または切り捨てる.
 		const glm::vec2 fpos = glm::clamp(
 			glm::vec2(pos.x, pos.z), glm::vec2(0.0f), glm::vec2(size) - glm::vec2(1));
 
@@ -73,9 +74,8 @@ namespace Terrain {
 		// の4点からなる正方形の内側に存在することになる.
 		const glm::ivec2 index = glm::min(glm::ivec2(fpos), size - glm::ivec2(2));
 
-		//左上頂点からの相対座標を計算.
+		// 左上頂点からの相対座標を計算.
 		const glm::vec2 offset = fpos - glm::vec2(index);
-
 
 		// 地形は4頂点からなる正方形であり、正方形は下記のように2つの三角形として定義される.
 		//     -Y
@@ -91,15 +91,17 @@ namespace Terrain {
 			const float h1 = heights[index.y * size.x + (index.x + 1)];
 			const float h2 = heights[(index.y + 1) * size.x + index.x];
 			return h0 + (h1 - h0) * offset.x + (h2 - h0) * offset.y;
+
 		}
 		else {
 			const float h0 = heights[(index.y + 1) * size.x + (index.x + 1)];
 			const float h1 = heights[(index.y + 1) * size.x + index.x];
 			const float h2 = heights[index.y * size.x + (index.x + 1)];
 			return h0 + (h1 - h0) * (1.0f - offset.x) + (h2 - h0) * (1.0f - offset.y);
+
 		}
 	}
-	
+
 	/**
 	* 高さマップからメッシュを作成する.
 	*
@@ -116,14 +118,14 @@ namespace Terrain {
 	*   a--b
 	*/
 	bool HeightMap::CreateMesh(
-	Mesh::Buffer& meshBuffer, const char* meshName, const char* texName) const
+		Mesh::Buffer& meshBuffer, const char* meshName, const char* texName) const
 	{
 		if (heights.empty()) {
 			std::cerr << "[エラー]" << __func__ << ": ハイトマップが読み込まれていません.\n";
 			return false;
-			
+
 		}
-		
+
 		// 頂点データを作成.
 		Mesh::Vertex v;
 		std::vector<Mesh::Vertex> vertices;
@@ -135,12 +137,12 @@ namespace Terrain {
 				v.texCoord = glm::vec2(x, (size.y - 1) - z) / (glm::vec2(size) - 1.0f);
 				v.normal = CalcNormal(x, z);
 				vertices.push_back(v);
-				
+
 			}
-			
+
 		}
 		const size_t vOffset =
-		meshBuffer.AddVertexData(vertices.data(), vertices.size() * sizeof(Mesh::Vertex));
+			meshBuffer.AddVertexData(vertices.data(), vertices.size() * sizeof(Mesh::Vertex));
 
 		// インデックスデータを作成.
 		std::vector<GLuint> indices;
@@ -154,33 +156,35 @@ namespace Terrain {
 				indices.push_back(a);
 				indices.push_back(b);
 				indices.push_back(c);
-				
+
 				indices.push_back(c);
 				indices.push_back(d);
 				indices.push_back(a);
-				
+
 			}
-			
+
 		}
 		const size_t iOffset =
 			meshBuffer.AddIndexData(indices.data(), indices.size() * sizeof(GLuint));
 
-		 // 頂点データとインデックスデータからメッシュを作成.
+		// 頂点データとインデックスデータからメッシュを作成.
 		Mesh::Primitive p =
-			meshBuffer.CreatePriitive(indices.size(), GL_UNSIGNED_INT, iOffset, vOffset);
+			meshBuffer.CreatePrimitive(indices.size(), GL_UNSIGNED_INT, iOffset, vOffset);
 		Mesh::Material m = meshBuffer.CreateMaterial(glm::vec4(1), nullptr);
 		if (texName) {
 			m.texture = Texture::Image2D::Create(texName);
-			
+
 		}
-		else{
+		else {
 			m.texture = Texture::Image2D::Create(name.c_str());
-			
+
 		}
 		meshBuffer.AddMesh(meshName, p, m);
 
+
 		return true;
 	}
+
 
 ///**
 //* ライトインデックスを更新する.
